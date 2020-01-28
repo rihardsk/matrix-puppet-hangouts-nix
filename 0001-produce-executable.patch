@@ -1,0 +1,14 @@
+diff --git a/package.json b/package.json
+index 486769e..26e7fc0 100644
+--- a/package.json
++++ b/package.json
+@@ -3,6 +3,9 @@
+   "version": "1.0.1",
+   "description": "",
+   "main": "index.js",
++  "bin": {
++    "matrix-puppet-hangouts": "index.js"
++  },
+   "scripts": {
+     "start": "DEBUG=*matrix-puppet:* node index.js",
+     "test": "echo \"no tests at this time\"; exit 1"

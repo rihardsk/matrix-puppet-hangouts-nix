@@ -1,5 +1,6 @@
-To update the matrix-puppet-hangouts pin:
+To update the expressions for matrix-puppet-hangouts and it's dependencies:
 ```sh
-nix-prefetch-git git@github.com:matrix-hacks/matrix-puppet-hangouts.git > matrix-puppet-hangouts.json
+cd puppet-nix
+node2nix -i node-packages.json --nodejs-10
 ```
 
