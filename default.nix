@@ -1,5 +1,6 @@
 { pkgs ? import <nixpkgs> { inherit system; },
-  system ? builtins.currentSystem }:
+  system ? builtins.currentSystem,
+  configJson }:
 
 let
   nodePackages = import ./puppet-nix {
@@ -15,6 +16,7 @@ nodePackages."matrix-puppet-hangouts-git://github.com/matrix-hacks/matrix-puppet
   propagatedBuildInputs = [ python-env.interpreter ];
   postInstall = ''
     wrapProgram $out/bin/matrix-puppet-hangouts --prefix PATH : "${python-env.interpreter}/bin"
+    cp ${configJson} $out/lib/node_modules/matrix-puppet-hangouts/config.json
   '';
   # NOTE: we cannot use patches here because node2nix uses mkDerivation without passing in the src argument
   # patches = [ ./0001-produce-executable.patch ];
