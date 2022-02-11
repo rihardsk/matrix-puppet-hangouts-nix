@@ -11,7 +11,7 @@ idna==2.8
 MechanicalSoup==0.6.0
 multidict==4.5.2
 packaging==16.8
-protobuf==3.6.1
+protobuf==3.15.0
 pyparsing==2.2.0
 readlike==0.1.2
 ReParser==1.4.3
